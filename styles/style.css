@@ -1,0 +1,27 @@
+body {
+    background-color: "";
+}
+
+h1 {
+    color: white;
+    /* transition: color .5s ease-in-out; */
+}
+
+
+
+.sexy-font {
+    font-family: -apple-system, BlinkMacSystemFont,
+     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
+     'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.big {
+    background-color: orange;
+}
+
+.small {
+    background-color: cornflowerblue;
+}
+.middle {
+    background-color: purple;
+}
