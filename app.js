@@ -7,15 +7,22 @@ const result = document.querySelector("#result");
 
 
 
+const HIDDEN_CLASSNAME = "hidden";
+
 function onNumGameSubmit(event) {
     event.preventDefault();
     const maxNum = maxInput.value;
     const selectNum = selectInput.value;
     const randomValue = getRandomAribitrary(maxNum);
+    console.log(randomValue);
     choose.innerText = `You chose: ${selectNum}, the machine chose: ${randomValue}.`
-    if (randomValue === selectNum) {
+    if (randomValue == selectNum) {
+        choose.classList.remove(HIDDEN_CLASSNAME);
+        result.classList.remove(HIDDEN_CLASSNAME);
         result.innerText = "You won!";
     } else {
+        choose.classList.remove(HIDDEN_CLASSNAME);
+        result.classList.remove(HIDDEN_CLASSNAME);
         result.innerText = "You lose!";
     }
     
@@ -24,8 +31,8 @@ function onNumGameSubmit(event) {
 
 
 function getRandomAribitrary(max) {
-    max.preventDefault();
-    return Math.random() * max;
+    
+    return Math.round(Math.random() * max);
 }
 
 
