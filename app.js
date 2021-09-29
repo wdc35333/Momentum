@@ -1,39 +1,38 @@
-const maxForm = document.querySelector("#maxNum");
-const maxInput = document.querySelector('#maxNum input');
-const selectForm = document.querySelector("#selectNum");
-const selectInput = document.querySelector('#selectNum input');
-const choose = document.querySelector("#choose");
-const result = document.querySelector("#result");
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
+
+
 
 
 
 const HIDDEN_CLASSNAME = "hidden";
 
-function onNumGameSubmit(event) {
+const USERNAME_KEY = "username";
+
+function onLoginSubmit(event) {
     event.preventDefault();
-    const maxNum = maxInput.value;
-    const selectNum = selectInput.value;
-    const randomValue = getRandomAribitrary(maxNum);
-    console.log(randomValue);
-    choose.innerText = `You chose: ${selectNum}, the machine chose: ${randomValue}.`
-    if (randomValue == selectNum) {
-        choose.classList.remove(HIDDEN_CLASSNAME);
-        result.classList.remove(HIDDEN_CLASSNAME);
-        result.innerText = "You won!";
-    } else {
-        choose.classList.remove(HIDDEN_CLASSNAME);
-        result.classList.remove(HIDDEN_CLASSNAME);
-        result.innerText = "You lose!";
-    }
-    
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    const username = loginInput.value;
+    localStorage.setItem(USERNAME_KEY, username);
+    paintGreetings(username);
 }
 
-
-
-function getRandomAribitrary(max) {
+function paintGreetings(username) {
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+    greeting.innerText = `Hello ${username}`;
     
-    return Math.round(Math.random() * max);
+
 }
 
+loginForm.addEventListener("submit", onLoginSubmit);
 
-selectForm.addEventListener("submit", onNumGameSubmit);
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+
+
+if (savedUsername === null) {
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.addEventListener("submit", onLoginSubmit);
+} else {
+    paintGreetings(savedUsername);
+}
