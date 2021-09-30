@@ -18,16 +18,23 @@ const colors = [
     "#ffd32a",
     "#ff3f34"
 ];
+const images = [
+    "0.jpeg",
+    "1.jpeg",
+    "2.jpeg"
+]
+const chosenImage = images[Math.floor(Math.random() * images.length)];
 const colorButton = document.querySelector("#color-button");
-// document.body.style.backgroundColor = "#ef5777";
-
 
 function onButtonClick(event) {
     event.preventDefault();
-    const chosenColor = colors[Math.floor(Math.random()*colors.length)]
-    const chosenColor2 = colors[Math.floor(Math.random()*colors.length)]
-    document.body.style.background = "linear-gradient(90deg,"+chosenColor+","+chosenColor2 +")";
-
+    const chosenColor = colors[Math.floor(Math.random() * colors.length)]
+    const chosenColor2 = colors[Math.floor(Math.random() * colors.length)]
+    document.body.style.background = "linear-gradient(90deg," + chosenColor + "," + chosenColor2 + ")";
 }
 
+const bgImage = document.createElement("img");
+bgImage.src = `img/${chosenImage}`;
+document.body.appendChild(bgImage);
 colorButton.addEventListener("click", onButtonClick);
+
