@@ -10,23 +10,23 @@
 
 <body>
     <div class="father">
-
         <h2 id="clock">00:00</h2>
         <form class="hidden" id="login-form">
-            
-            <h1>어서오세요! 이름이 뭐에요?</h1>
-            <input id="input-login" required maxlength="15" type="text" style="width: 250px; color:white; border:2px solid white; background: transparent;"; />
-            <!-- <button>Log In</button> -->
+            <h1 class="first-greeting" style="font-size: 55px;">어서 오세요! 이름이 뭐예요?</h1>
+            <input id="input-login" required maxlength="15" type="text" style="width: 250px; color:white; border:2px solid white; background: transparent;" placeholder="내 이름은.." />
         </form>
         <h1 class="hidden" id="greeting"></h1>
 
 
         <form id="todo-form">
-            <h1>해야 할 일을 적어주세요!</h1>
-            <input id="input-todo" type="text" required style="border: 2px solid white; background: transparent;"/>
+            <h1>해야 할 일을 적어 주세요!</h1>
+            <input id="input-todo" type="text" required style="width: 250px; color:white; border:2px solid white; background: transparent;" placeholder="나는 지금.."/>
         </form>
         <ul id="todo-list"></ul>
-
+        <div id="weather">
+            <span></span>
+            <span></span>
+        </div>
         <div id="quote">
             <span></span>
             <span></span>
@@ -43,6 +43,7 @@
     <script src="./js/clock.js"></script>
     <script src="./js/quotes.js"></script>
     <script src="./js/background.js"></script>
+    <script src="./js/weather.js"></script>
 </body>
 
 </html>
