@@ -3,10 +3,10 @@ const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector("#greeting");
 const date = new Date();
 
-const GOODMORNING = "Good morning, ";
-const GOODAFTERNOON = "Good afternoon, ";
-const GOODEVENING = "Good evening, ";
-const GOODNIGHT = "Good night, ";
+const GOODMORNING = "좋은 아침입니다, ";
+const GOODAFTERNOON = "점심 맛있게 드세요, ";
+const GOODEVENING = "벌써 저녁이네요, ";
+const GOODNIGHT = "좋은 하루였어요, ";
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
 
