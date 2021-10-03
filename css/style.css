@@ -20,8 +20,6 @@ button {
 .father {
   height: 100%;
   display: flex;
-  grid-template-columns: repeat(5%,20);
-  grid-template-rows: repeat(5%,20);
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -34,10 +32,12 @@ button {
 
 #input-login {
   font-size: 20px;
+  color: white;
 }
 
 #input-todo {
   font-size: 20px;
+  color: white;
 }
 
 #greeting {
